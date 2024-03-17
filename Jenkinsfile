@@ -13,8 +13,8 @@ pipeline {
                 echo "Building.."
                 sh '''
                 cd myapp
-                apt update && apt install -y python3-xyz
-                pip install --user requirements.txt
+                pip -v
+                pip install requirements.txt
                 '''
             }
         }
