@@ -9,7 +9,7 @@ pipeline {
     }
     stages {
        stage('Build') {
-            stages {
+            steps {
                 echo "python environment"
                 sh '''
                 python3 -m venv .venv
