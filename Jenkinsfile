@@ -8,13 +8,12 @@ pipeline {
         pollSCM 'H/5 * * * *'
     }
     stages {
-        stage('Build') {
+       stage('Build') {
             steps {
                 echo "Building.."
                 sh '''
                 cd myapp
-                pip install xyz --break-system-packages
-                pip install requirements.txt
+                pip install -r requirements.txt
                 '''
             }
         }
@@ -24,7 +23,7 @@ pipeline {
                 sh '''
                 cd myapp
                 python3 hello.py
-                pythin3 hello.py --name=Joe
+                python3 hello.py --name=Brad
                 '''
             }
         }
