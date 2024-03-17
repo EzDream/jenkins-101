@@ -13,7 +13,7 @@ pipeline {
                 echo "Building.."
                 sh '''
                 cd myapp
-                pip install -r requirement.txt
+                pip install -r requirements.txt
                 '''
             }
         }
@@ -36,4 +36,4 @@ pipeline {
             }
         }
     }
-}
+} 
