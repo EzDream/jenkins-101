@@ -8,23 +8,13 @@ pipeline {
         pollSCM 'H/5 * * * *'
     }
     stages {
-        stage('Environment') {
-            steps {
-                echo "Environment.."
-                sh '''
-                python3 -m venv .venv
-                source .venv/bin/activate
-                cd myapp
-                python3 -m pip install -r requirements.txt
-                '''
-            }
-        }
        stage('Build') {
             steps {
                 echo "Building.."
                 sh '''
                 cd myapp
-                
+                pip install xyz --break-system-packages
+                pip install -r requirements.txt
                 '''
             }
         }
