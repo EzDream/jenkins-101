@@ -8,6 +8,15 @@ pipeline {
         pollSCM 'H/5 * * * *'
     }
     stages {
+        stage('Build1') {
+            steps {
+                echo "Building.."
+                sh '''
+                cd myapp
+                pip install -r requirements.txt
+                '''
+            }
+        }
        stage('Build') {
             steps {
                 echo "Building.."
